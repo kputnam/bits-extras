@@ -18,7 +18,7 @@ Description:        Mostly wraps low-level bit operations provided by GCC
                     candidates for inclusion in the proper 'Data.Bits'
                     package. 
                     .
-                    Hackage ideas:
+                    Relevant Hackage tickets:
                     .
                     * <http://hackage.haskell.org/trac/ghc/ticket/3563>
                     .
