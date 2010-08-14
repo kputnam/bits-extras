@@ -14,9 +14,10 @@ Description:        Mostly wraps low-level bit operations provided by GCC
                     primitives suitable for low-level shared-memory
                     synchronization.
                     .
-                    Primitives from the 'Extras' subpackage could be
-                    candidates for inclusion in the proper 'Data.Bits'
-                    package. 
+                    Primitives from the 'Extras' subpackage would be useful to
+                    have in the proper 'Data.Bits' package, although this
+                    would probably require broader support across different
+                    compiler backends.
                     .
                     Relevant Hackage tickets:
                     .
@@ -28,6 +29,9 @@ Stability:          experimental
 Build-Type:         Simple
 Cabal-Version: >= 1.6
 Extra-Source-Files: cbits/bitops-gcc.c cbits/bitops-gcc.h
+Source-Repository head
+    type: mercurial
+    location: http://dev.wikidev.net/hg/bits-extras/
 --extra-tmp-files: cbits/bitops-gcc.h
 library
     Exposed-Modules:  Data.Bits.Extras Data.Bits.Atomic
