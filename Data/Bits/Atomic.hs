@@ -3,11 +3,6 @@
 -- wrapper functions called through the FFI. See
 -- <http://gcc.gnu.org/onlinedocs/gcc-4.5.0/gcc/Atomic-Builtins.html> or the
 -- version corresponding to your compiler for more detail.
---
--- The C code dynamically links to @libgcc_s@, which can cause problems in
--- GHCi. GHCi does not currently support sonames and tries to open
--- @libgcc_s.so@ while ignoring e.g. @libgcc_s.so.1@. A possible workaround
--- for GHCi on a linux system: @ln -s \/lib\/libgcc_s.so.1 \/lib\/libgcc_s.so@
 module Data.Bits.Atomic (
     -- * Atomic bit operations on 'Word'-sized memory locations
     AtomicBits(..),
