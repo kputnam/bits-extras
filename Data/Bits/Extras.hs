@@ -1,6 +1,6 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 -- | Extended bit operations, implemented using GCC builtins (see
--- <http://gcc.gnu.org/onlinedocs/gcc-4.5.0/gcc/Other-Builtins.html>).
+-- <http://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html>).
 module Data.Bits.Extras (
     ExtraBits(..)
 ) where
