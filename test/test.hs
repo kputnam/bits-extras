@@ -44,7 +44,7 @@ testTypes t = do
 test_trailingZeros :: PolyTest
 test_trailingZeros i = do
     let t0 = i - i
-    assertEqual "0" (fromIntegral t0) (trailingZeros t0)
+    -- No test for 0, as the result would be undefined
     trailingZeros (t0 + 1) @?= fromIntegral t0
     trailingZeros (t0 + 3) @?= fromIntegral t0
     trailingZeros (t0 + 2) @?= fromIntegral t0 + 1

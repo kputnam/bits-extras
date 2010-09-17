@@ -77,7 +77,8 @@ Executable test
     hs-source-dirs:  ., test
     other-modules:   Data.Bits.Extras
     main-is:         test.hs
-    GHC-Options:      -O2 -threaded -fhpc
+    --GHC-Options:      -O2 -threaded -fhpc
+    GHC-Options:      -O2 -threaded
     GHC-Prof-Options: -auto-all
 
     Include-Dirs:     cbits
