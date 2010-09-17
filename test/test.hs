@@ -49,7 +49,7 @@ test_trailingZeros i = do
     trailingZeros (t0 + 3) @?= fromIntegral t0
     trailingZeros (t0 + 2) @?= fromIntegral t0 + 1
     let hbitshift = bitSize i - 1
-        hbitset = (t0 + 1) `shiftL` hbitshift
+        hbitset = trailingZeros $ (t0 + 1) `shiftL` hbitshift
     assertEqual "High bit set" (fromIntegral hbitset) hbitshift
 test_trailingZeros_all :: Assertion
 test_trailingZeros_all = testTypes test_trailingZeros

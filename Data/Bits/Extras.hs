@@ -7,6 +7,7 @@ module Data.Bits.Extras (
 import Data.Bits
 import Data.Word
 import Data.Int
+import Foreign.C.Types
 
 -- | Instances provided: 'Word', 'Word8', 'Word16', 'Word32', 'Word64', 'Int', 'Int8', 'Int16', 'Int32', 'Int64'
 class Bits x => ExtraBits x where
@@ -90,7 +91,7 @@ instance ExtraBits Word64 where
     {-# INLINE lowestBitPlus1 #-}
     leadingZeros = c_clzll
     {-# INLINE leadingZeros #-}
-    trailingZeros = c_ctzll
+    trailingZeros = fromIntegral . c_ctzll
     {-# INLINE trailingZeros #-}
     populationCount = c_popcountll
     {-# INLINE populationCount #-}
@@ -184,7 +185,7 @@ foreign import ccall unsafe "bitops-gcc.h ffsll"
 foreign import ccall unsafe "bitops-gcc.h clzll"
     c_clzll :: Word64 -> Word32
 foreign import ccall unsafe "bitops-gcc.h ctzll"
-    c_ctzll :: Word64 -> Word32
+    c_ctzll :: Word64 -> CInt
 foreign import ccall unsafe "bitops-gcc.h popcountll"
     c_popcountll :: Word64 -> Word32
 foreign import ccall unsafe "bitops-gcc.h parityll"
