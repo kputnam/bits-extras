@@ -34,11 +34,10 @@ Category:           Data
 Stability:          experimental
 Build-Type:         Simple
 Cabal-Version: >= 1.6
---Extra-Source-Files: cbits/bitops-gcc.c cbits/bitops-gcc.h
+Extra-Source-Files: cbits/bitops-gcc.c cbits/bitops-gcc.h
 Source-Repository head
     type: mercurial
     location: http://dev.wikidev.net/hg/bits-extras/
---extra-tmp-files: cbits/bitops-gcc.h
 library
     Exposed-Modules:  Data.Bits.Extras
     Build-Depends:    base >= 4 && < 6
@@ -58,3 +57,28 @@ library
     --Includes:       bitops-gcc.h
     --LD-Options:     -flto
     --hs-source-dirs: .
+
+flag test
+    description: Build test program.
+    default:     False
+
+Executable test
+    if flag(test)
+        buildable:  True
+        build-depends:   
+                    base >= 4 && < 6, 
+                    QuickCheck, 
+                    HUnit,
+                    test-framework-quickcheck2,
+                    test-framework-hunit,
+                    test-framework
+    else
+        buildable:  False
+    hs-source-dirs:  ., test
+    other-modules:   Data.Bits.Extras
+    main-is:         test.hs
+    GHC-Options:      -O2 -threaded -fhpc
+    GHC-Prof-Options: -auto-all
+
+    Include-Dirs:     cbits
+    C-Sources:        cbits/bitops-gcc.c
