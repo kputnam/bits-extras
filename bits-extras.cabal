@@ -1,5 +1,5 @@
 Name:               bits-extras
-Version:            0.1.2
+Version:            0.1.3
 License:            BSD3
 License-File:       License.txt
 Maintainer:         Gabriel Wicke <wicke@wikidev.net>
@@ -30,6 +30,15 @@ Description:
  * <http://hackage.haskell.org/trac/ghc/ticket/3563>
  .
  * <http://hackage.haskell.org/trac/ghc/ticket/4102>
+ .
+ /Changes/:
+ .
+ * 0.1.3: Added a first test and tweaked documentation. No functional changes.
+ .
+ * 0.1.2: Moved the 'Data.Bits.Atomic' module to the package @bits-atomic@.
+   Those operations do not depend on libgcc_s and should work wherever GCC 4.X
+   is available.  Link to @bits-atomic@ on hackage:
+   <http://hackage.haskell.org/package/bits-atomic>
 Category:           Data
 Stability:          experimental
 Build-Type:         Simple
