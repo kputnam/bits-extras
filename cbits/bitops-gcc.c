@@ -1,4 +1,4 @@
-#include "bitops-gcc.h"
+#include "bitops.h"
 
 inline unsigned int ffs (unsigned int x) { return __builtin_ffs (x); }
 inline unsigned int clz (unsigned int x) { return __builtin_clz (x); }
